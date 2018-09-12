@@ -11,39 +11,117 @@
     <title>Star Wars Figher</title>
 </head>
 <body>
+    <!-- 
+
+    Selection Phase
+
+    -->
+    <div class="selectionPhase">
+        <div id="selectionTop">
+            <h1>Please Choose Your Character to Start</h1>
+        </div>
+
+        <div id="selectionBottom">
+            <div id="rebelAlliance">
+                <h2>Rebel Alliance</h2>
+                <div class="topRow">
+                    <div class='aLeft'>
+                        <img src="assets/images/character/chewbacca.png" alt="">
+                        <div class="name">Chewbacca</div>
+                    </div>
+                    <div class="aRight">
+                        <img src="assets/images/character/luke.png" alt="">
+                        <div class="name">Luke Skywalker</div>
+                    </div>
+                </div>
+                <div class="botRow">
+                    <div class="aLeft">
+                        <img src="assets/images/character/princess.png" alt="">
+                        <div class="name">Princess Leia</div>
+                    </div>
+                    <div class="aRight">
+                        <img src="assets/images/character/Yoda.png" alt="">
+                        <div class="name">Master Yoda</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="galaticEmpire">
+                <h2>Galatic Empire</h2>
+                <div class="topRow">
+                    <div class="gLeft">
+                        <img src="assets/images/character/Darth Sidious.png" alt="">
+                        <div class="name">Darth Sidious</div>
+                    </div>
+                    <div class="gRight">
+                        <img src="assets/images/character/darthMaul.png" alt="">
+                        <div class="name">Darth Maul</div>
+                    </div>
+                </div>
+                <div class="botRow">
+                    <div class="gLeft">
+                        <img src="assets/images/character/darthvador.png" alt="">
+                        <div class="name">Darth Vador</div>
+                    </div>
+                    <div class="gRight">
+                        <img src="assets/images/character/stormtrooper.png" alt="">
+                        <div class="name">Storm Trooper</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 
+
+    Battle Phase 
+
+    -->
+    <div class="battlePhase">
         <header>
             <div id="headerLeft">
-                <div id="name">Luke Skywalker</div>
-                <div class="progressBar"><div class="healthBarLeft">60</div></div>
+                <div id="leftName">Luke Skywalker</div>
+                <div class="progressBarLeft"><div class="healthBarLeft">60</div></div>
             </div>
             <div id="headerCenter">
                 <h1>Star Wars Fighter</h1>
             </div>
             <div id="headerRight">
-                <div id="name">Darth Vader</div>
-                <div class="progressBar"><div class="healthBarRight">40</div></div>
+                <div id="rightName">Darth Vader</div>
+                <div class="progressBarRight"><div class="healthBarRight">40</div></div>
             </div>
         </header>
-
+        
         <div class="battleField">
             <div id="leftField">
                 <img id="leftPlayer" src="assets/images/character/luke.png" alt="">
             </div>
-
+            
             <div id="powerField">
                 <img id='abilities' src="assets/images/abilities/lightning.gif" alt="">
             </div>
-
+            
             <div id="rightField">
                 <img id="rightPlayer"  src="assets/images/character/darthvador.png" alt="">
             </div>
         </div>
-
-
-
-
-
-
-    <script src="assets/javascript/game.js"></script>
+        
+        <div id="abilitiesSection">
+            <div id="abilitiesLeft">
+                <button id="leftAbility1">Lightning</button>
+                <button id="leftAbility2">Force Push</button>
+                <button id="leftAbility2">Light Saber</button>
+            </div>
+            <div id="abilitiesCenter"></div>
+            <div id="abiltiesRight">
+                <button id="rightAbility1">Lightning</button>
+                <button id="rightAbility2">Force Throw</button>
+                <button id="rightAbility2">Light Saber</button>
+            </div>
+        </div>
+    </div>
+        
+        <script src="assets/javascript/game.js"></script>
 </body>
 </html>
