@@ -14,6 +14,18 @@ body,html {
     overflow: auto;
 }
 
+.showDiv {
+    display: block;
+}
+.hideDiv {
+    display: none;
+}
+.fadeDiv {
+    opacity: .5;
+}
+.unfadeDiv {
+    opacity: 1;
+}
 /* 
 
 
@@ -24,7 +36,6 @@ Selection Phase
 .selectionPhase {
     width: 100%;
     height: 100%;
-    display: none;
 }
 
 #selectionTop {
