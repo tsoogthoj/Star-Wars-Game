@@ -80,6 +80,10 @@ img {
     height: 49%;
 }
 
+#rebelAlliance img {
+    cursor: pointer;
+}
+
 .aLeft {
     height: 100%;
     width: 47%;
@@ -113,12 +117,20 @@ img {
     width: 45%;
     text-align: center;
 }
-
+#galaticEmpire img:hover {
+    cursor: pointer;
+}
 #galaticEmpire h2 {
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+#rebelAlliance .name {
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+#galaticEmpire .name {
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
 .gLeft {
     height: 100%;
     width: 47%;
@@ -171,14 +183,15 @@ h1 {
 
 #headerLeft {
     width: 39%;
+    margin-left: 5px;
     float: left;
     border: 1px solid black;
     height: 100%;
 }
 
 #headerCenter {
-    margin-left: 1%;
-    margin-right: 1%;
+    margin-left: .5%;
+    margin-right: .5%;
     text-align: center;
     width: 19%;
     float: left;
@@ -188,6 +201,7 @@ h1 {
 
 #headerRight {
     width: 39%;
+    margin-right: 5px;
     float: right;
     border: 1px solid black;
     height: 100%;
@@ -221,12 +235,14 @@ h1 {
 .healthBarRight {
     height: 100%;
     width: 40%;
+    text-align: right;
     background-color: green;
     float: right;
 }
 
 #rightName {
     float: right;
+    padding-bottom: 11px;
 }
 
 /* center section */
