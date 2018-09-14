@@ -222,6 +222,7 @@ console.log(abilitiesDmg);
         $('#rebelAlliance-' + i).click(selectAddFade);
         // if clicked on galatic side
         $('#galaticEmpire-' + i).click(selectAddFade);
+        $('#themeSong').trigger('play');
 
     }
 // Battle Phase
@@ -242,55 +243,44 @@ console.log(abilitiesDmg);
     // player one
     // abilities buttons
         // fade out abilities img
+        
+        // When click, this happens: place image and do animation, subtract abilities damage from health
+        function animationDamageCal() {
+            for (var i = 0; i < abilities.length; i++)
+            if ($('#leftAbility1').html() === abilities[i]) {
+                $('#powerField').html("<img id='abilities' src=" + abilitiesImg[i] + "></img>");
+                $('#abilities').animate({left: '90%'}, 'slow', function() {
+                $('#abilities').fadeOut('fast');
+                });
+                console.log(abilitiesDmg[i]);
+                var newDmg = abilitiesDmg[i];
+                if (abilitiesDmg[i] < 15) {
+                    var newDmg = abilitiesDmg[i];
+                    currentDamage = newDmg + (15 - abilitiesDmg[i]);
+                    newDmg = currentDamage;
+                    console.log(newDmg);
+                    rightHealth = rightHealth - currentDamage;
+                }
+                $('.healthBarRight').html(rightHealth);
+                $('.healthBarRight').width(rightHealth + '%');
+            }
+            // if computer health reaches 0, player 1 wins
+            if (rightHealth <= 0) {
+                alert('Player One Wins');
+            }
+        }
         // button 1
         $('#leftAbility1').click(function() {
-            button1Html = $('#leftAbility1').html();
-            for (var i = 0; i < abilities.length; i++)
-                if ($('#leftAbility1').html() === abilities[i]) {
-                    console.log(abilitiesImg[i]);
-                    $('#powerField').html("<img id='abilities' src=" + abilitiesImg[i] + "></img>");
-                    $('#abilities').animate({left: '90%'}, 'slow', function() {
-                        $('#abilities').fadeOut('fast');
-                    });
-                    console.log(abilitiesDmg[i]);
-                    rightHealth = rightHealth - abilitiesDmg[i]; 
-                    $('.healthBarRight').html(rightHealth);
-                    $('.healthBarRight').width(rightHealth + '%');
-                }
-            
-        })
+            animationDamageCal();
+        });
         // button 2
         $('#leftAbility2').click(function() {
-            button2Html = $('#leftAbility2').html();
-            for (var i = 0; i < abilities.length; i++)
-                if ($('#leftAbility1').html() === abilities[i]) {
-                    console.log(abilitiesImg[i]);
-                    $('#powerField').html("<img id='abilities' src=" + abilitiesImg[i] + "></img>");
-                    $('#abilities').animate({left: '90%'}, 'slow', function() {
-                        $('#abilities').fadeOut('fast');
-                    });
-                    console.log(abilitiesDmg[i]);
-                    rightHealth = rightHealth - abilitiesDmg[i]; 
-                    $('.healthBarRight').html(rightHealth);
-                    $('.healthBarRight').width(rightHealth + '%');
-                }
-        })
+            animationDamageCal();
+        });
         // button 3
         $('#leftAbility3').click(function() {
-            button3Html = $('#leftAbility3').html();
-            for (var i = 0; i < abilities.length; i++)
-                if ($('#leftAbility1').html() === abilities[i]) {
-                    console.log(abilitiesImg[i]);
-                    $('#powerField').html("<img id='abilities' src=" + abilitiesImg[i] + "></img>");
-                    $('#abilities').animate({left: '90%'}, 'slow', function() {
-                        $('#abilities').fadeOut('fast');
-                    });
-                    console.log(abilitiesDmg[i]);
-                    rightHealth = rightHealth - abilitiesDmg[i]; 
-                    $('.healthBarRight').html(rightHealth);
-                    $('.healthBarRight').width(rightHealth + '%');
-                }
-        })
+            animationDamageCal();
+        });
     // abilities animation
 
     // computer player
