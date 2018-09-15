@@ -1,7 +1,8 @@
 
 // characters attributes
 var character = [
-    'kyloren', 'darthvader', 'darthsidious', 'darthmaul', 'masteryoda', 'lukeskywalker', 'chewbacca', 'princessleia'
+    'kyloren', 'darthvader', 'darthsidious', 'darthmaul', 
+    'masteryoda', 'lukeskywalker', 'chewbacca', 'princessleia'
 ]
 
 var abilities = [];
@@ -210,7 +211,7 @@ console.log(abilitiesDmg);
                     $('#leftAbility3').html(currentChar.abilities3);
                 }
             }
-
+        // Remove name from player
         $('#leftField').children('div').remove();
         // fade out selection phase
         $('.selectionPhase').fadeOut(1000);
@@ -220,8 +221,34 @@ console.log(abilitiesDmg);
     for (var i = 0; i < 4; i++){
         // if clicked on character on rebel side
         $('#rebelAlliance-' + i).click(selectAddFade);
+        // computer character to be random galatic
+        $('#rebelAlliance-' + i).click(function() {
+            var randomComputer = Math.floor((Math.random() * 4));
+            var selected = $('#galaticEmpire-' + randomComputer).html();
+            $('#rightField').html(selected);
+            $('#rightField').children('img').attr('id', 'rightPlayer');
+            // flip image
+            $('#rightField').children('img').addClass('flipped');
+            // change name on battle phase with selection character name
+            $('#rightName').html($('#rightField').children('div').html());
+            // Remove Name below character
+            $('#rightField').children('div').remove();
+        });
         // if clicked on galatic side
         $('#galaticEmpire-' + i).click(selectAddFade);
+        // if clicked on galatic side, random rebel to be computer
+        $('#galaticEmpire-' + i).click(function() {
+            var randomComputer = Math.floor((Math.random() * 4));
+            var selected = $('#rebelAlliance-' + randomComputer).html();
+            $('#rightField').html(selected);
+            $('#rightField').children('img').attr('id', 'rightPlayer');
+            // flip image
+            $('#rightField').children('img').addClass('flipped');
+            // change name on battle phase with selection character name
+            $('#rightName').html($('#rightField').children('div').html());
+            // Remove Name below character
+            $('#rightField').children('div').remove();
+        });
         $('#themeSong').trigger('play');
 
     }
@@ -244,42 +271,48 @@ console.log(abilitiesDmg);
     // abilities buttons
         // fade out abilities img
         
-        // When click, this happens: place image and do animation, subtract abilities damage from health
-        function animationDamageCal() {
+        // calculate damage and substract from computer's player health
+
+        // button 1
+        $('#leftAbility1').click(function() {
             for (var i = 0; i < abilities.length; i++)
-            if ($('#leftAbility1').html() === abilities[i]) {
+                if ($('#leftAbility1').html() === abilities[i]) {
+                // add corresponding abilitie image 
+                $('#powerField').html("<img id='abilities' src=" + abilitiesImg[i] + "></img>");
+                // move ability's image toward the other player
+                $('#abilities').animate({left: '90%'}, 'slow', function() {
+                $('#abilities').fadeOut('fast');
+                });
+                // calulate, increment damage then substract from computer's character's health
+                if (abilitiesDmg[i] < 15) {
+                    rightHealth -= abilitiesDmg[i]
+                    $('.healthBarRight').html(rightHealth);
+                    $('.healthBarRight').width(rightHealth + '%');
+                }
+                if (rightHealth <= 0) {
+                    alert($('#leftName').html() + ' Wins');
+                }
+            }
+        });
+        // button 2
+        $('#leftAbility2').click(function() {
+            for (var i = 0; i < abilities.length; i++)
+                if ($('#leftAbility2').html() === abilities[i]) {
                 $('#powerField').html("<img id='abilities' src=" + abilitiesImg[i] + "></img>");
                 $('#abilities').animate({left: '90%'}, 'slow', function() {
                 $('#abilities').fadeOut('fast');
                 });
-                console.log(abilitiesDmg[i]);
-                var newDmg = abilitiesDmg[i];
-                if (abilitiesDmg[i] < 15) {
-                    var newDmg = abilitiesDmg[i];
-                    currentDamage = newDmg + (15 - abilitiesDmg[i]);
-                    newDmg = currentDamage;
-                    console.log(newDmg);
-                    rightHealth = rightHealth - currentDamage;
-                }
-                $('.healthBarRight').html(rightHealth);
-                $('.healthBarRight').width(rightHealth + '%');
             }
-            // if computer health reaches 0, player 1 wins
-            if (rightHealth <= 0) {
-                alert('Player One Wins');
-            }
-        }
-        // button 1
-        $('#leftAbility1').click(function() {
-            animationDamageCal();
-        });
-        // button 2
-        $('#leftAbility2').click(function() {
-            animationDamageCal();
         });
         // button 3
         $('#leftAbility3').click(function() {
-            animationDamageCal();
+            for (var i = 0; i < abilities.length; i++)
+                if ($('#leftAbility3').html() === abilities[i]) {
+                $('#powerField').html("<img id='abilities' src=" + abilitiesImg[i] + "></img>");
+                $('#abilities').animate({left: '90%'}, 'slow', function() {
+                $('#abilities').fadeOut('fast');
+                });
+            }
         });
     // abilities animation
 

@@ -26,6 +26,9 @@ body,html {
 .unfadeDiv {
     opacity: 1;
 }
+.flipped {
+    transform: scale(-1, 1);
+}
 /* 
 
 
