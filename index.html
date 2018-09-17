@@ -8,9 +8,12 @@
     <!-- style -->
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="assets/css/animate.css">
     <title>Star Wars Figher</title>
 </head>
 <body>
+    <div ></div>
     <!-- 
 
     Selection Phase
@@ -62,7 +65,7 @@
                 <div class="botRow">
                     <div class="gLeft" id="galaticEmpire-2">
                         <img id='vador' src="assets/images/character/darthvador.png">
-                        <div class="name">Darth Vador</div>
+                        <div class="name">Darth Vader</div>
                     </div>
                     <div class="gRight" id="galaticEmpire-3">
                         <img id='trooper' src="assets/images/character/KyloRen.png">
@@ -110,15 +113,15 @@
         
         <div id="abilitiesSection">
             <div id="abilitiesLeft">
-                <button id="leftAbility1">Lightning</button>
-                <button id="leftAbility2">Force Push</button>
-                <button id="leftAbility3">Light Saber</button>
+                <button class="abilitiesBtn" id="leftAbility1"></button>
+                <button class="abilitiesBtn" id="leftAbility2"></button>
+                <button class="abilitiesBtn" id="leftAbility3"></button>
             </div>
             <div id="abilitiesCenter"></div>
             <div id="abiltiesRight">
-                <!-- <button id="rightAbility1">Lightning</button>
-                <button id="rightAbility2">Force Throw</button>
-                <button id="rightAbility2">Light Saber</button> -->
+                <button id="rightAbility1" class="hidden"></button>
+                <button id="rightAbility2" class="hidden"></button>
+                <button id="rightAbility3" class="hidden"></button>
             </div>
         </div>
     </div>
@@ -129,10 +132,8 @@
     </div>
     
     <audio id='themeSong' src="assets/audio/themeSong.mp3" loop="true"></audio>
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>    
+    <script src="assets/javascript/jquery-ui.js"></script>   
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>    
     <script src="assets/javascript/game.js"></script>
 </body>
 </html>

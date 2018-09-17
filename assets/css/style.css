@@ -29,6 +29,13 @@ body,html {
 .flipped {
     transform: scale(-1, 1);
 }
+
+.b {
+    transform: scale(1, 1);
+}
+.hidden {
+    display: none;
+}
 /* 
 
 
@@ -272,7 +279,7 @@ h1 {
 
 #powerField {
     position: absolute;
-    height: 50%;
+    height: 50%;    
     bottom: 15%;
     width: 56%;
     display: block;
@@ -339,3 +346,4 @@ h1 {
 button {
     margin: 5px;
 }
+

@@ -5,180 +5,163 @@ var character = [
     'masteryoda', 'lukeskywalker', 'chewbacca', 'princessleia'
 ]
 
-var abilities = [];
-var abilitiesImg = [];
 var abilitiesDmg = [];
 
 var kyloren = {
     name: 'Kylo Ren',
-    hp: 100,
     side: 'Galatic Empire',
-    abilities1: 'Light Saber',
-    abilities1img: "'assets/images/abilities/lightsaber.gif'",
-    abilities1Dmg: 8, 
+    abilities1: 'Saber',
+    abilitiesDmg1: 8, 
     abilities2: 'Push',
-    abilities2img: "'assets/images/abilities/push.gif'",
-    abilities2Dmg: 5, 
+    abilitiesDmg2: 5, 
     abilities3: 'Lightning',
-    abilities3img: "'assets/images/abilities/lightning.gif'",
-    abilities3Dmg: 10, 
+    abilitiesDmg3: 10, 
 }
 
 var darthvader = {
     name: 'Darth Vader',
-    hp: 100,
     side: 'Galatic Empire',
-    abilities1: 'Choke',
-    abilities1img: "'assets/images/abilities/choke.gif'",
-    abilities1Dmg: 6, 
-    abilities2: 'Light Saber',
-    abilities2img: "'assets/images/abilities/lightsaber.gif'",
-    abilities2Dmg: 8, 
-    abilities3: 'Lightning',
-    abilities3img: "'assets/images/abilities/lightning.gif'",
-    abilities3Dmg: 10, 
+    abilities1: 'Lightning',
+    abilitiesDmg1: 7, 
+    abilities2: 'Choke',
+    abilitiesDmg2: 6, 
+    abilities3: 'Saber',
+    abilitiesDmg3: 10,
 }
 
 var darthsidious = {
     name: 'Darth Sidious',
-    hp: 100,
     side: 'Galatic Empire',
-    abilities1: 'Throw',
-    abilities1img: "'assets/images/abilities/throw.gif'",
-    abilities1Dmg: 7, 
+    abilities1: 'Lightning',
+    abilitiesDmg1: 7, 
     abilities2: 'Choke',
-    abilities2img: "'assets/images/abilities/choke.gif'",
-    abilities2Dmg: 6, 
+    abilitiesDmg2: 6, 
     abilities3: 'Lightning',
-    abilities3img: "'assets/images/abilities/lightning.gif'",
-    abilities3Dmg: 10,
+    abilitiesDmg3: 10,
 }
 
 var darthmaul = {
     name: 'Darth Maul',
-    hp: 100,
     side: 'Galatic Empire',
-    abilities1: 'Double Light Saber',
-    abilities1img: "'assets/images/abilities/doublelightsaber.gif'",
-    abilities1Dmg: 14, 
+    abilities1: 'Saber',
+    abilitiesDmg1: 14, 
     abilities2: 'Choke',
-    abilities2img: "'assets/images/abilities/choke.gif'",
-    abilities2Dmg: 6, 
-    abilities3: 'Throw',
-    abilities3img: "'assets/images/abilities/throw.gif'",
-    abilities3Dmg: 7, 
+    abilitiesDmg2: 6, 
+    abilities3: 'Lightning',
+    abilitiesDmg3: 7, 
 }
 
 var masteryoda = {
     name: 'Master Yoda',
-    hp: 100,
     side: 'Rebel Alliance',
-    abilities1: 'Light Saber',
-    abilities1img: "'assets/images/abilities/lightsaber.gif'",
-    abilities1Dmg: 8, 
-    abilities2: 'Heals',
-    abilities2img: "'assets/images/abilities/heals.gif'",
-    abilities2Dmg: 12, 
+    abilities1: 'Saber',
+    abilitiesDmg1: 8, 
+    abilities2: 'Lightning',
+    abilitiesDmg2: 12, 
     abilities3: 'Push',
-    abilities3img: "'assets/images/abilities/push.gif'",
-    abilities3Dmg: 5,
+    abilitiesDmg3: 5,
 }
 
 var lukeskywalker = {
     name: 'Luke Skywalker',
-    hp: 100,
     side: 'Rebel Alliance',
-    abilities1: 'Light Saber',
-    abilities1img: "'assets/images/abilities/lightsaber.gif'",
-    abilities1Dmg: 8,
+    abilities1: 'Saber',
+    abilitiesDmg1: 8,
     abilities2: 'Punch',
-    abilities2img: "'assets/images/abilities/deflect.gif'",
-    abilities2Dmg: 4,
+    abilitiesDmg2: 4,
     abilities3: 'Push',
-    abilities3img: "'assets/images/abilities/push.gif'",
-    abilities3Dmg: 5,
+    abilitiesDmg3: 5,
 }
 
 var chewbacca = {
     name: 'Chewbacca',
-    hp: 100,
     side: 'Rebel Alliance',
     abilities1: 'Bowcaster',
-    abilities1img: "'assets/images/abilities/bowcaster.gif'",
-    abilities1Dmg: 9,
-    abilities2: 'Slam Ground',
-    abilities2img: "'assets/images/abilities/slamground.gif'",
-    abilities2Dmg: 11, 
+    abilitiesDmg1: 9,
+    abilities2: 'Slam',
+    abilitiesDmg2: 11, 
     abilities3: 'Grenade',
-    abilities3img: "'assets/images/abilities/grenade.gif'",
-    abilities3Dmg: 12, 
+    abilitiesDmg3: 12, 
 }
 
 var princessleia = {
     name: 'Princess Leia',
-    hp: 100,
     side: 'Rebel Alliance',
-    abilities1: 'Pistol Fire',
-    abilities1img: "'assets/images/abilities/pistolfire.gif'",
-    abilities1Dmg: 3, 
-    abilities2: 'Sheild',
-    abilities2img: "'assets/images/abilities/sheild.gif'",
-    abilities2Dmg: 15, 
+    abilities1: 'Pistol',
+    abilitiesDmg1: 3, 
+    abilities2: 'Punch',
+    abilitiesDmg2: 15, 
     abilities3: 'Grenade',
-    abilities3img: "'assets/images/abilities/grenade.gif'",
-    abilities3Dmg: 12, 
+    abilitiesDmg3: 12, 
 }
-// log abilities into array
-for (var i = 0; i < character.length; i++) {
-    var currentChar = window[character[i]];
-    var currentCharAbilities1 = currentChar.abilities1;
-    var currentCharAbilities2 = currentChar.abilities2;
-    var currentCharAbilities3 = currentChar.abilities3;
-    if(abilities.indexOf(currentCharAbilities1) === -1) {
-        abilities.push(currentCharAbilities1);
+
+// FUNCTIONS
+// When player select a character
+function selectAddFade() {
+    // fade selection when clicked
+    $(this).addClass('fadeDiv');
+    // replase player1 with selection
+    var selected = $(this).html();
+    console.log(selected);
+    $('#leftField').html(selected);
+    $('#leftField').children('img').attr('id', 'leftPlayer');
+    // change name on battle phase with selection character name
+    $('#leftName').html($('#leftField').children('div').html());
+    // Replace abilities button with choosen abilities
+        // get name of choosen character
+        var name = $('#leftField').children('div').html();
+        // remove spaces
+        noSpace = name.replace(/ /g,'');
+        // convert all letters to lower case
+        newName = noSpace.toLowerCase();
+        // loop the abilities to button ablities
+        for (var i = 0; i < character.length; i++) {
+            if (newName === character[i]) {
+                // select varibles with string
+                currentChar = window[character[i]];
+                // replace html of abilities buttons with character abilities
+                $('#leftAbility1').html(currentChar.abilities1);
+                $('#leftAbility2').html(currentChar.abilities2);
+                $('#leftAbility3').html(currentChar.abilities3);
+            }
+        }
+    // Remove name from player
+    $('#leftField').children('div').remove();
+    // fade out selection phase
+    $('.selectionPhase').fadeOut(1000);
+    // fade in battle phase
+    $('.battlePhase').fadeIn(2000);
     }
-    if(abilities.indexOf(currentCharAbilities2) === -1) {
-        abilities.push(currentCharAbilities2);
+// Randome computer character when player choose a chacater
+function randomCharacter() {
+    $('#rightField').children('img').attr('id', 'rightPlayer');
+    // flip image
+    $('#rightField').children('img').toggleClass('flipped');
+    // change name on battle phase with selection character name
+    $('#rightName').html($('#rightField').children('div').html());
+    // get name of random character
+    var randomName = $('#rightField').children('div').html();
+    // remove spaces
+    noSpaceRandomName = randomName.replace(/ /g,'');
+    // convert all letters to lower case
+    newRandomName = noSpaceRandomName.toLowerCase();
+    // loop the abilities to button ablities
+    for (var i = 0; i < character.length; i++) {
+        if (newRandomName === character[i]) {
+            // select varibles with string
+            currentRandomChar = window[character[i]];
+            // replace html of abilities buttons with character abilities
+            $('#rightAbility1').html(currentRandomChar.abilities1);
+            console.log(currentRandomChar.abilities1);
+            $('#rightAbility2').html(currentRandomChar.abilities2);
+            console.log(currentRandomChar.abilities2);
+            $('#rightAbility3').html(currentRandomChar.abilities3);
+            console.log(currentRandomChar.abilities3);
+        }
     }
-    if(abilities.indexOf(currentCharAbilities3) === -1) {
-        abilities.push(currentCharAbilities3);
-    }
+    // Remove Name below character
+    $('#rightField').children('div').remove();
 }
-console.log(abilities);
-// log abilities img into array
-for (var i = 0; i < character.length; i++) {
-    var currentCharImg = window[character[i]];
-    var currentCharAbilities1Img = currentCharImg.abilities1img;
-    var currentCharAbilities2Img = currentCharImg.abilities2img;
-    var currentCharAbilities3Img = currentCharImg.abilities3img;
-    if(abilitiesImg.indexOf(currentCharAbilities1Img) === -1) {
-        abilitiesImg.push(currentCharAbilities1Img);
-    }
-    if(abilitiesImg.indexOf(currentCharAbilities2Img) === -1) {
-        abilitiesImg.push(currentCharAbilities2Img);
-    }
-    if(abilitiesImg.indexOf(currentCharAbilities3Img) === -1) {
-        abilitiesImg.push(currentCharAbilities3Img);
-    }
-}
-console.log(abilitiesImg);
-// log abilities dmg into array
-for (var i = 0; i < character.length; i++) {
-    var currentCharDmg = window[character[i]];
-    var currentCharAbilities1Dmg = currentCharDmg.abilities1Dmg;
-    var currentCharAbilities2Dmg = currentCharDmg.abilities2Dmg;
-    var currentCharAbilities3Dmg = currentCharDmg.abilities3Dmg;
-    if(abilitiesDmg.indexOf(currentCharAbilities1Dmg) === -1) {
-        abilitiesDmg.push(currentCharAbilities1Dmg);
-    }
-    if(abilitiesDmg.indexOf(currentCharAbilities2Dmg) === -1) {
-        abilitiesDmg.push(currentCharAbilities2Dmg);
-    }
-    if(abilitiesDmg.indexOf(currentCharAbilities3Dmg) === -1) {
-        abilitiesDmg.push(currentCharAbilities3Dmg);
-    }
-}
-console.log(abilitiesDmg);
 // selection phase
     // show selection phase
     $('.battlePhase').toggle();
@@ -226,13 +209,7 @@ console.log(abilitiesDmg);
             var randomComputer = Math.floor((Math.random() * 4));
             var selected = $('#galaticEmpire-' + randomComputer).html();
             $('#rightField').html(selected);
-            $('#rightField').children('img').attr('id', 'rightPlayer');
-            // flip image
-            $('#rightField').children('img').addClass('flipped');
-            // change name on battle phase with selection character name
-            $('#rightName').html($('#rightField').children('div').html());
-            // Remove Name below character
-            $('#rightField').children('div').remove();
+            randomCharacter();
         });
         // if clicked on galatic side
         $('#galaticEmpire-' + i).click(selectAddFade);
@@ -241,80 +218,324 @@ console.log(abilitiesDmg);
             var randomComputer = Math.floor((Math.random() * 4));
             var selected = $('#rebelAlliance-' + randomComputer).html();
             $('#rightField').html(selected);
-            $('#rightField').children('img').attr('id', 'rightPlayer');
-            // flip image
-            $('#rightField').children('img').addClass('flipped');
-            // change name on battle phase with selection character name
-            $('#rightName').html($('#rightField').children('div').html());
-            // Remove Name below character
-            $('#rightField').children('div').remove();
+            randomCharacter();
         });
-        $('#themeSong').trigger('play');
 
     }
+
+
 // Battle Phase
 // header portion
-    // player one
-        // health
-        var leftHealth = 100;
+    // player one health
+        var leftHealth = 10;
         $('.healthBarLeft').html(leftHealth);
-        // health bar dynamic to health left
         $('.healthBarLeft').width(leftHealth + '%');
     // computer player health
-        // health
-        var rightHealth = 100;
+        var rightHealth = 10;
         $('.healthBarRight').html(rightHealth);
         $('.healthBarRight').width(rightHealth + '%');
 
 // battle portion
-    // player one
-    // abilities buttons
-        // fade out abilities img
-        
-        // calculate damage and substract from computer's player health
-
-        // button 1
-        $('#leftAbility1').click(function() {
-            for (var i = 0; i < abilities.length; i++)
-                if ($('#leftAbility1').html() === abilities[i]) {
-                // add corresponding abilitie image 
-                $('#powerField').html("<img id='abilities' src=" + abilitiesImg[i] + "></img>");
-                // move ability's image toward the other player
-                $('#abilities').animate({left: '90%'}, 'slow', function() {
-                $('#abilities').fadeOut('fast');
-                });
-                // calulate, increment damage then substract from computer's character's health
-                if (abilitiesDmg[i] < 15) {
-                    rightHealth -= abilitiesDmg[i]
-                    $('.healthBarRight').html(rightHealth);
-                    $('.healthBarRight').width(rightHealth + '%');
+    var playerWent = false;
+    var computerWent = false;
+// win condition
+function win() {
+    if (rightHealth <= 0) {
+        console.log('you win');
+        $('.battlePhase').hide();
+    };
+    if (leftHealth <= 0) {
+        console.log('you win');
+        $('.battlePhase').hide();
+    };
+    
+}
+// button 1
+$('#leftAbility1').click(function() {
+    for (var i = 0; i < character.length; i++)
+        playerWent = true;
+        // get name of choosen character
+        var chacacterName = $('#leftName').html().replace(/ /g,'').toLowerCase();
+        // loop the abilities to button ablities
+        for (var i = 0; i < character.length; i++) {
+            if (chacacterName === character[i]) {
+                // select varibles with string
+                currentChar = window[character[i]];
+                // get abilityDamage
+                var abilitiyDamage = currentChar.abilitiesDmg1;
+            }
+        }
+        var ablitiyName = $('#leftAbility1').html().toLowerCase();
+        var abilityTag = "<img id='abilities' src='assets/images/abilities/" + ablitiyName + ".gif'>"
+        console.log(abilityTag);
+        // loop the abilities to button ablities
+        $('#powerField').html(abilityTag);
+        // move ability's image toward the other player
+        $('#abilities').animate({left: '90%'}, 2000, function() {
+            $('#abilities').fadeOut('fast');
+        });
+        // calulate, increment damage then substract from computer's character's health
+        setTimeout(function() {
+            $('#rightPlayer').toggleClass('shake animated');
+            rightHealth = rightHealth - abilitiyDamage;
+            $('.healthBarRight').html(rightHealth);
+            $('.healthBarRight').width(rightHealth + '%');
+        }, 1900);
+        setTimeout(function() {
+            $('#rightPlayer').removeClass();
+            win();
+        }, 2800);
+        $('button').prop('disabled', true);
+        // Computer Side
+        if (playerWent) {
+            win();
+            var randomButtonNumber = Math.floor((Math.random() * 3) + 1);
+            setTimeout(function() {
+                // flip character
+                $('#rightPlayer').removeClass('flipped');
+                $('#rightPlayer').addClass('flipped');
+                $('#powerField').fadeIn();
+                var abilityName = $('#rightAbility' + randomButtonNumber).html()
+                var abilityTag = "<img id='compAbilities' src='assets/images/abilities/" + abilityName + ".gif'>";
+                // loop the abilities to button ablities
+                $('#powerField').html(abilityTag);
+                $('#compAbilities').toggleClass("flipped");
+                $('#compAbilities').css({left: '50%', top: '20%',position:'relative'});
+                // set computer power
+                // get computer position
+                // var computerPositionX = $('#rightPlayer').offset().left;
+                // console.log(computerPositionX);
+            }, 3000);
+            setTimeout(function() {
+                $('#compAbilities').animate({left: '-20%'}, 2000, function() {  
+                $('#compAbilities').fadeOut('fast');
+                $('#leftPlayer').toggleClass('shake animated');
+                $('.healthBarLeft').html(leftHealth);
+                $('.healthBarLeft').width(leftHealth + '%');
+                $('button').prop('disabled', false);
+                // get name of choosen character
+                var currentChar;
+                var name = $('#rightName').html().replace(/ /g,'').toLowerCase();
+                for (var i = 0; i < character.length; i++) {
+                    if (name === character[i]) {
+                        // select varibles with string
+                        currentChar = window[character[i]];
+                    }
                 }
-                if (rightHealth <= 0) {
-                    alert($('#leftName').html() + ' Wins');
+                if (randomButtonNumber === 1) {
+                    leftHealth -= currentChar.abilitiesDmg1;
+                    // $('.healthBarLeft').html(leftHealth);
+                    // $('.healthBarLeft').width(leftHealth + '%');
+                } else if (randomButtonNumber === 2) {
+                    leftHealth -=currentChar.abilitiesDmg2;
+                    // $('.healthBarLeft').html(leftHealth);
+                    // $('.healthBarLeft').width(leftHealth + '%');
+                } else if (randomButtonNumber === 2) {
+                    leftHealth -= currentChar.abilitiesDmg3;
+                    // $('.healthBarLeft').html(leftHealth);
+                    // $('.healthBarLeft').width(leftHealth + '%');
                 }
-            }
-        });
-        // button 2
-        $('#leftAbility2').click(function() {
-            for (var i = 0; i < abilities.length; i++)
-                if ($('#leftAbility2').html() === abilities[i]) {
-                $('#powerField').html("<img id='abilities' src=" + abilitiesImg[i] + "></img>");
-                $('#abilities').animate({left: '90%'}, 'slow', function() {
-                $('#abilities').fadeOut('fast');
+                $('.healthBarLeft').html(leftHealth);
+                $('.healthBarLeft').width(leftHealth + '%');
+                playerWent = false;
                 });
+            }, 3100);
+            setTimeout(function() {
+                $('#leftPlayer').removeClass();
+                win();
+            }, 3500);
+        }
+    });
+// button 2
+$('#leftAbility2').click(function() {
+    for (var i = 0; i < character.length; i++)
+        playerWent = true;
+        // get name of choosen character
+        var chacacterName = $('#leftName').html().replace(/ /g,'').toLowerCase();
+        // loop the abilities to button ablities
+        for (var i = 0; i < character.length; i++) {
+            if (chacacterName === character[i]) {
+                // select varibles with string
+                currentChar = window[character[i]];
+                // get abilityDamage
+                var abilitiyDamage = currentChar.abilitiesDmg1;
             }
+        }
+        var ablitiyName = $('#leftAbility2').html().toLowerCase();
+        var abilityTag = "<img id='abilities' src='assets/images/abilities/" + ablitiyName + ".gif'>"
+        console.log(abilityTag);
+        // loop the abilities to button ablities
+        $('#powerField').html(abilityTag);
+        // move ability's image toward the other player
+        $('#abilities').animate({left: '90%'}, 2000, function() {
+            $('#abilities').fadeOut('fast');
         });
-        // button 3
-        $('#leftAbility3').click(function() {
-            for (var i = 0; i < abilities.length; i++)
-                if ($('#leftAbility3').html() === abilities[i]) {
-                $('#powerField').html("<img id='abilities' src=" + abilitiesImg[i] + "></img>");
-                $('#abilities').animate({left: '90%'}, 'slow', function() {
-                $('#abilities').fadeOut('fast');
+        // calulate, increment damage then substract from computer's character's health
+        setTimeout(function() {
+            $('#rightPlayer').toggleClass('shake animated');
+            rightHealth = rightHealth - abilitiyDamage;
+            $('.healthBarRight').html(rightHealth);
+            $('.healthBarRight').width(rightHealth + '%');
+        }, 1900);
+        setTimeout(function() {
+            $('#rightPlayer').removeClass();
+            win();
+        }, 2800);
+        $('button').prop('disabled', true);
+        // Computer Side
+        if (playerWent) {
+            win();
+            var randomButtonNumber = Math.floor((Math.random() * 3) + 1);
+            setTimeout(function() {
+                // flip character
+                $('#rightPlayer').removeClass('flipped');
+                $('#rightPlayer').addClass('flipped');
+                $('#powerField').fadeIn();
+                var abilityName = $('#rightAbility' + randomButtonNumber).html()
+                var abilityTag = "<img id='compAbilities' src='assets/images/abilities/" + abilityName + ".gif'>";
+                // loop the abilities to button ablities
+                $('#powerField').html(abilityTag);
+                $('#compAbilities').toggleClass("flipped");
+                $('#compAbilities').css({left: '50%', top: '20%',position:'relative'});
+                // set computer power
+                // get computer position
+                // var computerPositionX = $('#rightPlayer').offset().left;
+                // console.log(computerPositionX);
+            }, 3000);
+            setTimeout(function() {
+                $('#compAbilities').animate({left: '-20%'}, 2000, function() {  
+                $('#compAbilities').fadeOut('fast');
+                $('#leftPlayer').toggleClass('shake animated');
+                $('.healthBarLeft').html(leftHealth);
+                $('.healthBarLeft').width(leftHealth + '%');
+                $('button').prop('disabled', false);
+                // get name of choosen character
+                var currentChar;
+                var name = $('#rightName').html().replace(/ /g,'').toLowerCase();
+                for (var i = 0; i < character.length; i++) {
+                    if (name === character[i]) {
+                        // select varibles with string
+                        currentChar = window[character[i]];
+                    }
+                }
+                if (randomButtonNumber === 1) {
+                    leftHealth -= currentChar.abilitiesDmg1;
+                    // $('.healthBarLeft').html(leftHealth);
+                    // $('.healthBarLeft').width(leftHealth + '%');
+                } else if (randomButtonNumber === 2) {
+                    leftHealth -=currentChar.abilitiesDmg2;
+                    // $('.healthBarLeft').html(leftHealth);
+                    // $('.healthBarLeft').width(leftHealth + '%');
+                } else if (randomButtonNumber === 2) {
+                    leftHealth -= currentChar.abilitiesDmg3;
+                    // $('.healthBarLeft').html(leftHealth);
+                    // $('.healthBarLeft').width(leftHealth + '%');
+                }
+                $('.healthBarLeft').html(leftHealth);
+                $('.healthBarLeft').width(leftHealth + '%');
+                playerWent = false;
                 });
+            }, 3100);
+            setTimeout(function() {
+                $('#leftPlayer').removeClass();
+                win();
+            }, 3500);
+        }
+    });
+// button 3
+$('#leftAbility3').click(function() {
+    for (var i = 0; i < character.length; i++)
+        playerWent = true;
+        // get name of choosen character
+        var chacacterName = $('#leftName').html().replace(/ /g,'').toLowerCase();
+        // loop the abilities to button ablities
+        for (var i = 0; i < character.length; i++) {
+            if (chacacterName === character[i]) {
+                // select varibles with string
+                currentChar = window[character[i]];
+                // get abilityDamage
+                var abilitiyDamage = currentChar.abilitiesDmg1;
             }
+        }
+        var ablitiyName = $('#leftAbility3').html().toLowerCase();
+        var abilityTag = "<img id='abilities' src='assets/images/abilities/" + ablitiyName + ".gif'>"
+        console.log(abilityTag);
+        // loop the abilities to button ablities
+        $('#powerField').html(abilityTag);
+        // move ability's image toward the other player
+        $('#abilities').animate({left: '90%'}, 2000, function() {
+            $('#abilities').fadeOut('fast');
         });
-    // abilities animation
-
-    // computer player
-        // charcter
+        // calulate, increment damage then substract from computer's character's health
+        setTimeout(function() {
+            $('#rightPlayer').toggleClass('shake animated');
+            rightHealth = rightHealth - abilitiyDamage;
+            $('.healthBarRight').html(rightHealth);
+            $('.healthBarRight').width(rightHealth + '%');
+        }, 1900);
+        setTimeout(function() {
+            $('#rightPlayer').removeClass();
+            win();
+        }, 2800);
+        $('button').prop('disabled', true);
+        // Computer Side
+        if (playerWent) {
+            win();
+            var randomButtonNumber = Math.floor((Math.random() * 3) + 1);
+            setTimeout(function() {
+                // flip character
+                $('#rightPlayer').removeClass('flipped');
+                $('#rightPlayer').addClass('flipped');
+                $('#powerField').fadeIn();
+                var abilityName = $('#rightAbility' + randomButtonNumber).html()
+                var abilityTag = "<img id='compAbilities' src='assets/images/abilities/" + abilityName + ".gif'>";
+                // loop the abilities to button ablities
+                $('#powerField').html(abilityTag);
+                $('#compAbilities').toggleClass("flipped");
+                $('#compAbilities').css({left: '50%', top: '20%',position:'relative'});
+                // set computer power
+                // get computer position
+                // var computerPositionX = $('#rightPlayer').offset().left;
+                // console.log(computerPositionX);
+            }, 3000);
+            setTimeout(function() {
+                $('#compAbilities').animate({left: '-20%'}, 2000, function() {  
+                $('#compAbilities').fadeOut('fast');
+                $('#leftPlayer').toggleClass('shake animated');
+                $('.healthBarLeft').html(leftHealth);
+                $('.healthBarLeft').width(leftHealth + '%');
+                $('button').prop('disabled', false);
+                // get name of choosen character
+                var currentChar;
+                var name = $('#rightName').html().replace(/ /g,'').toLowerCase();
+                for (var i = 0; i < character.length; i++) {
+                    if (name === character[i]) {
+                        // select varibles with string
+                        currentChar = window[character[i]];
+                    }
+                }
+                if (randomButtonNumber === 1) {
+                    leftHealth -= currentChar.abilitiesDmg1;
+                    // $('.healthBarLeft').html(leftHealth);
+                    // $('.healthBarLeft').width(leftHealth + '%');
+                } else if (randomButtonNumber === 2) {
+                    leftHealth -=currentChar.abilitiesDmg2;
+                    // $('.healthBarLeft').html(leftHealth);
+                    // $('.healthBarLeft').width(leftHealth + '%');
+                } else if (randomButtonNumber === 2) {
+                    leftHealth -= currentChar.abilitiesDmg3;
+                    // $('.healthBarLeft').html(leftHealth);
+                    // $('.healthBarLeft').width(leftHealth + '%');
+                }
+                $('.healthBarLeft').html(leftHealth);
+                $('.healthBarLeft').width(leftHealth + '%');
+                playerWent = false;
+                win();
+                });
+            }, 3100);
+            setTimeout(function() {
+                $('#leftPlayer').removeClass();
+                win();
+            }, 3500);
+        }
+    });
