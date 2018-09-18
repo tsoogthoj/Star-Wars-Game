@@ -105,17 +105,20 @@ $('#content').css("animation-play-state", "paused");
 $('.logo').css("animation-play-state", "paused");
 $('.selectionPhase').hide();
 $('#clickToContinue').click(function() {
+    // test
+    $('.selectionPhase').fadeIn(2000);
+    
     $('.welcome').fadeOut(1000);
     $("#themeSong").trigger('play');
     $('.opening').fadeIn(1000);
     $('.intro').css("animation-play-state", "running");
     $('#content').css("animation-play-state", "running");
     $('.logo').css("animation-play-state", "running");
+    setTimeout(function() {
+        $('.selectionPhase').fadeIn(2000);
+        $('.opening').fadeOut(1000);
+    }, 60000);
 });
-setTimeout(function() {
-    $('.selectionPhase').fadeIn(2000);
-    $('.opening').fadeOut(1000);
-}, 70000);
 // FUNCTIONS
 // When player select a character
 function selectAddFade() {
@@ -284,11 +287,16 @@ function win() {
         $('#powerField').remove();
         $('.battlePhase').fadeOut(1000);
         $('.endMessage').fadeIn(4000);
+        setTimeout(function() {
+            $('.endMessage').fadeOut(2000);
+            $('.theEnd').fadeIn(3000);
+        }, 2000);
     };
     
 }
 // button 1
 $('#leftAbility1').click(function() {
+    var randomButtonNumber = Math.floor((Math.random() * 3) + 1);
     for (var i = 0; i < character.length; i++)
         playerWent = true;
         // get name of choosen character
@@ -326,7 +334,6 @@ $('#leftAbility1').click(function() {
         // Computer Side
         if (playerWent) {
             win();
-            var randomButtonNumber = Math.floor((Math.random() * 3) + 1);
             setTimeout(function() {
                 // flip character
                 $('#rightPlayer').removeClass('flipped');
@@ -347,8 +354,6 @@ $('#leftAbility1').click(function() {
                 $('#compAbilities').animate({left: '-20%'}, 2000, function() {  
                 $('#compAbilities').fadeOut('fast');
                 $('#leftPlayer').toggleClass('shake animated');
-                $('.healthBarLeft').html(leftHealth);
-                $('.healthBarLeft').width(leftHealth + '%');
                 $('button').prop('disabled', false);
                 // get name of choosen character
                 var currentChar;
@@ -361,19 +366,17 @@ $('#leftAbility1').click(function() {
                 }
                 if (randomButtonNumber === 1) {
                     leftHealth -= currentChar.abilitiesDmg1;
-                    // $('.healthBarLeft').html(leftHealth);
-                    // $('.healthBarLeft').width(leftHealth + '%');
+                    $('.healthBarLeft').html(leftHealth);
+                    $('.healthBarLeft').width(leftHealth + '%');
                 } else if (randomButtonNumber === 2) {
                     leftHealth -=currentChar.abilitiesDmg2;
-                    // $('.healthBarLeft').html(leftHealth);
-                    // $('.healthBarLeft').width(leftHealth + '%');
-                } else if (randomButtonNumber === 2) {
+                    $('.healthBarLeft').html(leftHealth);
+                    $('.healthBarLeft').width(leftHealth + '%');
+                } else if (randomButtonNumber === 3) {
                     leftHealth -= currentChar.abilitiesDmg3;
-                    // $('.healthBarLeft').html(leftHealth);
-                    // $('.healthBarLeft').width(leftHealth + '%');
+                    $('.healthBarLeft').html(leftHealth);
+                    $('.healthBarLeft').width(leftHealth + '%');
                 }
-                $('.healthBarLeft').html(leftHealth);
-                $('.healthBarLeft').width(leftHealth + '%');
                 playerWent = false;
                 win();
                 });
@@ -457,19 +460,17 @@ $('#leftAbility2').click(function() {
                 }
                 if (randomButtonNumber === 1) {
                     leftHealth -= currentChar.abilitiesDmg1;
-                    // $('.healthBarLeft').html(leftHealth);
-                    // $('.healthBarLeft').width(leftHealth + '%');
+                    $('.healthBarLeft').html(leftHealth);
+                    $('.healthBarLeft').width(leftHealth + '%');
                 } else if (randomButtonNumber === 2) {
                     leftHealth -=currentChar.abilitiesDmg2;
-                    // $('.healthBarLeft').html(leftHealth);
-                    // $('.healthBarLeft').width(leftHealth + '%');
-                } else if (randomButtonNumber === 2) {
+                    $('.healthBarLeft').html(leftHealth);
+                    $('.healthBarLeft').width(leftHealth + '%');
+                } else if (randomButtonNumber === 3) {
                     leftHealth -= currentChar.abilitiesDmg3;
-                    // $('.healthBarLeft').html(leftHealth);
-                    // $('.healthBarLeft').width(leftHealth + '%');
+                    $('.healthBarLeft').html(leftHealth);
+                    $('.healthBarLeft').width(leftHealth + '%');
                 }
-                $('.healthBarLeft').html(leftHealth);
-                $('.healthBarLeft').width(leftHealth + '%');
                 playerWent = false;
                 });
             }, 3100);
@@ -553,19 +554,17 @@ $('#leftAbility3').click(function() {
                 }
                 if (randomButtonNumber === 1) {
                     leftHealth -= currentChar.abilitiesDmg1;
-                    // $('.healthBarLeft').html(leftHealth);
-                    // $('.healthBarLeft').width(leftHealth + '%');
+                    $('.healthBarLeft').html(leftHealth);
+                    $('.healthBarLeft').width(leftHealth + '%');
                 } else if (randomButtonNumber === 2) {
                     leftHealth -=currentChar.abilitiesDmg2;
-                    // $('.healthBarLeft').html(leftHealth);
-                    // $('.healthBarLeft').width(leftHealth + '%');
-                } else if (randomButtonNumber === 2) {
+                    $('.healthBarLeft').html(leftHealth);
+                    $('.healthBarLeft').width(leftHealth + '%');
+                } else if (randomButtonNumber === 3) {
                     leftHealth -= currentChar.abilitiesDmg3;
-                    // $('.healthBarLeft').html(leftHealth);
-                    // $('.healthBarLeft').width(leftHealth + '%');
+                    $('.healthBarLeft').html(leftHealth);
+                    $('.healthBarLeft').width(leftHealth + '%');
                 }
-                $('.healthBarLeft').html(leftHealth);
-                $('.healthBarLeft').width(leftHealth + '%');
                 playerWent = false;
                 win();
                 });
