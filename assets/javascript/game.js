@@ -4,7 +4,9 @@ var character = [
     'kyloren', 'darthvader', 'darthsidious', 'darthmaul', 
     'masteryoda', 'lukeskywalker', 'chewbacca', 'princessleia'
 ]
-
+var abilitiesName = [
+    'saber', 'push', 'lightning', 'choke', 'push',  'punch', 'bowcaster', 'slam', 'grenade', 'pistol'
+]
 var abilitiesDmg = [];
 
 var kyloren = {
@@ -105,9 +107,6 @@ $('#content').css("animation-play-state", "paused");
 $('.logo').css("animation-play-state", "paused");
 $('.selectionPhase').hide();
 $('#clickToContinue').click(function() {
-    // test
-    $('.selectionPhase').fadeIn(2000);
-    
     $('.welcome').fadeOut(1000);
     $("#themeSong").trigger('play');
     $('.opening').fadeIn(1000);
@@ -294,6 +293,61 @@ function win() {
     };
     
 }
+// play sound function
+function playAbilitySound(soundName) {
+    if (soundName === 'bowcaster') {
+        $('#bowcaster').trigger('play');
+        setTimeout(function() {
+            $('#bowcaster').trigger('pause');
+        }, 1900)
+    } else if (soundName === 'choke') {
+        $('#choke').trigger('play');
+        setTimeout(function() {
+            $('#choke').trigger('pause')
+        }, 1900)
+    } else if (soundName === 'choke') {
+        $('#choke').trigger('play');
+        setTimeout(function() {
+            $('#choke').trigger('pause')
+        }, 1900)
+    } else if (soundName === 'grenade') {
+        $('#grenade').trigger('play');
+        setTimeout(function() {
+            $('#grenade').trigger('pause')
+        }, 1900)
+    } else if (soundName === 'lightning') {
+        $('#lightning').trigger('play');
+        setTimeout(function() {
+            $('#lightning').trigger('pause')
+        }, 1900)
+    } else if (soundName === 'pistol') {
+        $('#pistol').trigger('play');
+        setTimeout(function() {
+            $('#pistol').trigger('pause')
+        }, 1900)
+    } else if (soundName === 'punch') {
+        $('#punch').trigger('play');
+        setTimeout(function() {
+            $('#punch').trigger('pause')
+        }, 1900)
+    } else if (soundName === 'push') {
+        $('#push').trigger('play');
+        setTimeout(function() {
+            $('#push').trigger('pause')
+        }, 1900)
+    } else if (soundName === 'saber') {
+        $('#saber').trigger('play');
+        setTimeout(function() {
+            $('#saber').trigger('pause')
+        }, 1900)
+    } else if (soundName === 'slam') {
+        $('#slam').trigger('play');
+        setTimeout(function() {
+            $('#slam').trigger('pause')
+        }, 1900)
+    }
+}
+
 // button 1
 $('#leftAbility1').click(function() {
     var randomButtonNumber = Math.floor((Math.random() * 3) + 1);
@@ -311,6 +365,9 @@ $('#leftAbility1').click(function() {
             }
         }
         var ablitiyName = $('#leftAbility1').html().toLowerCase();
+        // play sound
+        playAbilitySound(ablitiyName);
+        // display ability image
         var abilityTag = "<img id='abilities' src='assets/images/abilities/" + ablitiyName + ".gif'>"
         console.log(abilityTag);
         // loop the abilities to button ablities
@@ -339,16 +396,15 @@ $('#leftAbility1').click(function() {
                 $('#rightPlayer').removeClass('flipped');
                 $('#rightPlayer').addClass('flipped');
                 $('#powerField').fadeIn();
-                var abilityName = $('#rightAbility' + randomButtonNumber).html()
+                var abilityName = $('#rightAbility' + randomButtonNumber).html().toLowerCase();
                 var abilityTag = "<img id='compAbilities' src='assets/images/abilities/" + abilityName + ".gif'>";
+                console.log(abilityName);
+                // play ability sound
+                playAbilitySound(abilityName);
                 // loop the abilities to button ablities
                 $('#powerField').html(abilityTag);
                 $('#compAbilities').toggleClass("flipped");
                 $('#compAbilities').css({left: '50%', top: '20%',position:'relative'});
-                // set computer power
-                // get computer position
-                // var computerPositionX = $('#rightPlayer').offset().left;
-                // console.log(computerPositionX);
             }, 3000);
             setTimeout(function() {
                 $('#compAbilities').animate({left: '-20%'}, 2000, function() {  
@@ -388,6 +444,7 @@ $('#leftAbility1').click(function() {
     });
 // button 2
 $('#leftAbility2').click(function() {
+    var randomButtonNumber = Math.floor((Math.random() * 3) + 1);
     for (var i = 0; i < character.length; i++)
         playerWent = true;
         // get name of choosen character
@@ -404,6 +461,8 @@ $('#leftAbility2').click(function() {
         var ablitiyName = $('#leftAbility2').html().toLowerCase();
         var abilityTag = "<img id='abilities' src='assets/images/abilities/" + ablitiyName + ".gif'>"
         console.log(abilityTag);
+        // play ability sound
+        playAbilitySound(ablitiyName);
         // loop the abilities to button ablities
         $('#powerField').html(abilityTag);
         // move ability's image toward the other player
@@ -425,22 +484,21 @@ $('#leftAbility2').click(function() {
         // Computer Side
         if (playerWent) {
             win();
-            var randomButtonNumber = Math.floor((Math.random() * 3) + 1);
             setTimeout(function() {
                 // flip character
                 $('#rightPlayer').removeClass('flipped');
                 $('#rightPlayer').addClass('flipped');
                 $('#powerField').fadeIn();
-                var abilityName = $('#rightAbility' + randomButtonNumber).html()
+                var abilityName = $('#rightAbility' + randomButtonNumber).html().toLowerCase();
                 var abilityTag = "<img id='compAbilities' src='assets/images/abilities/" + abilityName + ".gif'>";
+                console.log(abilityName);
+                // play ability sound
+                playAbilitySound(abilityName);
                 // loop the abilities to button ablities
                 $('#powerField').html(abilityTag);
                 $('#compAbilities').toggleClass("flipped");
                 $('#compAbilities').css({left: '50%', top: '20%',position:'relative'});
-                // set computer power
-                // get computer position
-                // var computerPositionX = $('#rightPlayer').offset().left;
-                // console.log(computerPositionX);
+
             }, 3000);
             setTimeout(function() {
                 $('#compAbilities').animate({left: '-20%'}, 2000, function() {  
@@ -495,9 +553,11 @@ $('#leftAbility3').click(function() {
                 var abilitiyDamage = currentChar.abilitiesDmg1;
             }
         }
-        var ablitiyName = $('#leftAbility3').html().toLowerCase();
-        var abilityTag = "<img id='abilities' src='assets/images/abilities/" + ablitiyName + ".gif'>"
+        var abilityName = $('#leftAbility3').html().toLowerCase();
+        var abilityTag = "<img id='abilities' src='assets/images/abilities/" + abilityName + ".gif'>"
         console.log(abilityTag);
+        // play ability sound
+        playAbilitySound(abilityName);
         // loop the abilities to button ablities
         $('#powerField').html(abilityTag);
         // move ability's image toward the other player
@@ -525,8 +585,10 @@ $('#leftAbility3').click(function() {
                 $('#rightPlayer').removeClass('flipped');
                 $('#rightPlayer').addClass('flipped');
                 $('#powerField').fadeIn();
-                var abilityName = $('#rightAbility' + randomButtonNumber).html()
+                var abilityName = $('#rightAbility' + randomButtonNumber).html().toLowerCase();
                 var abilityTag = "<img id='compAbilities' src='assets/images/abilities/" + abilityName + ".gif'>";
+                // play ability sound
+                playAbilitySound(abilityName);
                 // loop the abilities to button ablities
                 $('#powerField').html(abilityTag);
                 $('#compAbilities').toggleClass("flipped");
