@@ -13,7 +13,44 @@
     <title>Star Wars Figher</title>
 </head>
 <body>
-    <div ></div>
+    <!-- 
+
+    Welcome
+
+    -->
+    <div class="welcome">
+        <h1>Welcome to Star Wars Figher</h1>
+        <h2 id="author">By Chong Thao</h2>
+        <h2 id="clickToContinue">Click Here To Continue</h2>
+    </div>
+    <!-- 
+    
+    Opening 
+
+    -->
+    <div class="opening">
+    <section class="intro">
+        A long long time ago, in a galaxy far,<br> far away....
+    </section>
+    
+    <section class="logo">
+        <img id="luke" src="assets/images/Logo.png">
+    </section>
+    
+    <!-- Change the text to your liking -->
+    <div id="board">  
+        <div id="content">
+            <p id="title">Episode 1,000,000,000,000</p>
+            <p id="subtitle">THE VERY VERY VERY LAST BATTLE</p>
+            <br>
+            <!-- And make it cheesy ! -->
+            <p>The struggles between good and evil rage on as CATRILLION of battles were fought and many more catrillion of lives have been lost. On the last glimpse of hope, the VERY VERY VERY last battle will commence. Now, the fate of this world is in your hands again, for the VERY VERY VERY last time. You will have to choose a side: GOOD or EVIL.</p>        
+            </div>  
+        </div>
+    </div>
+    
+          
+
     <!-- 
 
     Selection Phase
@@ -128,10 +165,17 @@
     
 
     <div class="endMessage">
-        <div id='endMessageDisplay'></div>
+        <div id='endMessageDisplay'>
+        </div>
+        <div id="winnerImage">
+            
+        </div>
     </div>
-    
+
+    <!-- audio files -->
     <audio id='themeSong' src="assets/audio/themeSong.mp3" loop="true"></audio>
+
+    <!-- script -->
     <script src="assets/javascript/jquery-ui.js"></script>   
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>    
     <script src="assets/javascript/game.js"></script>

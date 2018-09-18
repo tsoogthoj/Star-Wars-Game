@@ -95,6 +95,25 @@ var princessleia = {
     abilitiesDmg3: 12, 
 }
 
+
+// Opening
+$('.opening').hide();
+$('.intro').css("animation-play-state", "paused");
+$('#content').css("animation-play-state", "paused");
+$('.logo').css("animation-play-state", "paused");
+$('.selectionPhase').hide();
+$('#clickToContinue').click(function() {
+    $('.welcome').fadeOut(1000);
+    $("#themeSong").trigger('play');
+    $('.opening').fadeIn(1000);
+    $('.intro').css("animation-play-state", "running");
+    $('#content').css("animation-play-state", "running");
+    $('.logo').css("animation-play-state", "running");
+});
+setTimeout(function() {
+    $('.selectionPhase').fadeIn(2000);
+    $('.opening').fadeOut(1000);
+}, 70000);
 // FUNCTIONS
 // When player select a character
 function selectAddFade() {
