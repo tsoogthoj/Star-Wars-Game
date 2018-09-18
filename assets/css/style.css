@@ -253,7 +253,7 @@ img {
     background-repeat: no-repeat;
     background-position: center center;
     overflow: auto;
-    border: 1px solid black;
+
 }
 
 .aRight {
@@ -266,7 +266,7 @@ img {
     background-repeat: no-repeat;
     background-position: center center;
     overflow: auto;
-    border: 1px solid black;
+
 }
 
 
@@ -300,7 +300,6 @@ img {
     background-repeat: no-repeat;
     background-position: center center;
     overflow: auto;
-    border: 1px solid black;
 }
 
 .gRight {
@@ -313,7 +312,6 @@ img {
     background-repeat: no-repeat;
     background-position: center center;
     overflow: auto;
-    border: 1px solid black;
 }
 
 /* 
@@ -344,7 +342,6 @@ h1 {
     width: 39%;
     margin-left: 5px;
     float: left;
-    border: 1px solid black;
     height: 100%;
 }
 
@@ -354,7 +351,6 @@ h1 {
     text-align: center;
     width: 19%;
     float: left;
-    border: 1px solid black;
 }
 
 
@@ -362,7 +358,6 @@ h1 {
     width: 39%;
     margin-right: 5px;
     float: right;
-    border: 1px solid black;
     height: 100%;
 }
 
@@ -423,7 +418,6 @@ h1 {
     bottom: 15%;
     width: 22%;
     height: 60%;
-    border: 1px solid black;
 }
 
 #powerField {
@@ -434,7 +428,6 @@ h1 {
     display: block;
     margin-left: 22%;;
     margin-right: 22%;;
-    border: 1px solid red;
 }
 
 #rightField {
@@ -443,8 +436,6 @@ h1 {
     right: 0px;
     width: 22%;
     height: 60%;
-    border: 1px solid black;
-
 }
 
 #leftPlayer, #rightPlayer {
@@ -464,7 +455,6 @@ h1 {
     bottom: 5%;
     height: 10%;
     width: 100%;
-    border: 1px solid white;
 }
 
 #abilitiesLeft {
@@ -472,7 +462,6 @@ h1 {
     float: left;
     width: 22%;
     bottom: 10%;
-    border: 1px solid white;
     justify-content: center;
 }
 
@@ -480,7 +469,7 @@ h1 {
     height: 10%;
     width: 55%;
     float: left;
-    background-color: black;
+
 }
 
 #abiltiesRight {
@@ -488,7 +477,6 @@ h1 {
     float: right;
     width: 22%;
     bottom: 10%;
-    border: 1px solid red;
     justify-content: center;
 }
 
