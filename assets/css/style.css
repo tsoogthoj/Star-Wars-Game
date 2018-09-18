@@ -496,3 +496,37 @@ button {
     margin: 5px;
 }
 
+
+/* 
+
+Ending 
+
+*/
+
+.endMessage {
+    margin-top: 10%;
+    height: 100%;
+    width: 100%;
+}
+#winningCharacter {
+    position: absolute;
+    display: block;
+    margin-left: 30%;
+    margin-right: 30%;
+    height: 60%;
+    width: auto;
+}
+.theEnd {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin-top: 30%;
+}
+
+.theEnd h1 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    font-size: 500%;
+    text-align: center;
+}

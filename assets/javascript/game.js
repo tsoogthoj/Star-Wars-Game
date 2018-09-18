@@ -97,6 +97,8 @@ var princessleia = {
 
 
 // Opening
+$('.theEnd').hide();
+$('.endMessage').hide();
 $('.opening').hide();
 $('.intro').css("animation-play-state", "paused");
 $('#content').css("animation-play-state", "paused");
@@ -246,11 +248,11 @@ function randomCharacter() {
 // Battle Phase
 // header portion
     // player one health
-        var leftHealth = 10;
+        var leftHealth = 100;
         $('.healthBarLeft').html(leftHealth);
         $('.healthBarLeft').width(leftHealth + '%');
     // computer player health
-        var rightHealth = 10;
+        var rightHealth = 100;
         $('.healthBarRight').html(rightHealth);
         $('.healthBarRight').width(rightHealth + '%');
 
@@ -260,12 +262,28 @@ function randomCharacter() {
 // win condition
 function win() {
     if (rightHealth <= 0) {
-        console.log('you win');
-        $('.battlePhase').hide();
+        var winningPlayer = $('#leftField').html();
+        var winningName = $('#leftName').html();
+        $('#lastMessageName').html(winningName + " wins");
+        $('#winningCharacter').html(winningPlayer);
+        $('#rightField').remove();
+        $('#powerField').remove();
+        $('.battlePhase').fadeOut(1000);
+        $('.endMessage').fadeIn(4000);
+        setTimeout(function() {
+            $('.endMessage').fadeOut(2000);
+            $('.theEnd').fadeIn(3000);
+        }, 2000);
     };
     if (leftHealth <= 0) {
-        console.log('you win');
-        $('.battlePhase').hide();
+        var winningPlayer = $('#rightField').html();
+        var winningName = $('#rightName').html();
+        $('#lastMessageName').html(winningName + " wins");
+        $('#winningCharacter').html(winningPlayer);
+        $('#leftField').remove();
+        $('#powerField').remove();
+        $('.battlePhase').fadeOut(1000);
+        $('.endMessage').fadeIn(4000);
     };
     
 }
@@ -299,10 +317,10 @@ $('#leftAbility1').click(function() {
             rightHealth = rightHealth - abilitiyDamage;
             $('.healthBarRight').html(rightHealth);
             $('.healthBarRight').width(rightHealth + '%');
+            win();
         }, 1900);
         setTimeout(function() {
             $('#rightPlayer').removeClass();
-            win();
         }, 2800);
         $('button').prop('disabled', true);
         // Computer Side
@@ -357,11 +375,11 @@ $('#leftAbility1').click(function() {
                 $('.healthBarLeft').html(leftHealth);
                 $('.healthBarLeft').width(leftHealth + '%');
                 playerWent = false;
+                win();
                 });
             }, 3100);
             setTimeout(function() {
                 $('#leftPlayer').removeClass();
-                win();
             }, 3500);
         }
     });
