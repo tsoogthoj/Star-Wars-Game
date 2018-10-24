@@ -6,4 +6,4 @@ Technoloy used
 - HTML
 - CSS
 - Jquery
-- used https://codepen.io/enicol/pen/erwdb for opening
+- used https://codepen.io/christopherkade/pen/rJVPjz for opening
