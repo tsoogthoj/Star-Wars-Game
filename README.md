@@ -10,3 +10,4 @@ Technoloy used
 - CSS
 - Jquery
 - used https://codepen.io/christopherkade/pen/rJVPjz for opening
+- <a href="https://www.gimp.org/">GIMP</a> was used to edit all photos found through Google Images (I do not own any of the images used in this project)
