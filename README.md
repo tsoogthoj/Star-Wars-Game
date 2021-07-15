@@ -1,4 +1,4 @@
-# Starwars Game
+# Star Wars Game
 
 Choose a side by choosing a character and press the buttons to make an attack. 
 
